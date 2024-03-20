@@ -1,0 +1,381 @@
+@import url('https://fonts.cdnfonts.com/css/technicality');
+
+@keyframes walking {
+  0% { transform: translate(-50%, -50%); }
+  25% { transform: translate(-50%, -54%); }
+  50% { transform: translate(-50%, -50%); }
+  75% { transform: translate(-50%, -52%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+body {
+/* 	position: relative; */
+	color: #3b3b3b;
+	font-family: Roboto, Arial, sans-serif;
+	font-size: 105%;
+	line-height: 125%;
+}
+
+.info {
+	position: relative;
+}
+
+button.walking {
+	background-color: #cccccc;
+	border-radius: 5px;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0.75em 1.25em 0.675em 5em;
+	vertical-align: middle;
+	text-align: center;
+	background-image: url("https://raw.githubusercontent.com/mariawarnes/codepen-assets/main/pokemon-pikachu.gif");
+  background-size: 40px;
+	background-repeat: no-repeat;
+  background-position: 15px center;
+	font-family: Roboto, Arial, sans-serif;
+	color: #3b3b3b;
+}
+
+button.walking.active {
+  background-image: url("https://raw.githubusercontent.com/mariawarnes/codepen-assets/main/pokemon-pikachu-stopped.gif");
+}
+
+.pokewalker {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+}
+
+.pokewalker.walking {
+  animation: walking 1.5s infinite;
+}
+
+.pokewalker::before {
+	content: "";
+	position: absolute;
+	top: 4%;
+	left: 5%;
+	width: 85%;
+	height: 90%;
+	display: block;
+	z-index: 1;
+	content: "";
+	display: block;
+	border-radius: 100%;
+	background-color: rgba(255,255,255,0.3);
+	filter: blur(10px);
+}
+
+.pokewalker::after {
+	content: "";
+	position: absolute;
+	top: 7%;
+	left: 5%;
+	width: 90%;
+	height: 85%;
+	display: block;
+	border-radius: 100%;
+	z-index: 2;
+	background-color: #C92D39;
+	filter: blur(2px);
+}
+
+.top {
+  width: 100%;
+  height: 50%;
+  background-color: #C92D39;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top::before {
+	content: "";
+	position: absolute;
+  top: 47%;
+  left: 13%;
+	width: 50px;
+	height: 10px;
+	background-color: white;
+	z-index: 3;
+	border-radius: 100%;
+	transform: rotate(-48deg);
+	box-shadow: 0 0 2px 4px white;
+	filter: blur(2px);
+	opacity: 0.9;
+}
+
+.bottom {
+  width: 100%;
+  height: 50%;
+  background-color: #EEEDF5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+	z-index: 3;
+}
+
+.bottom::before {
+	content: "";
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 90%;
+	height: 80%;
+	display: block;
+	z-index: 3;
+	content: "";
+	display: block;
+	border-radius: 100%;
+	background-color: rgba(0,0,0,0.3);
+	filter: blur(10px);
+	transform: rotate(-45deg);
+}
+
+.bottom::after {
+	content: "";
+	position: absolute;
+	top: 16%;
+	left: 28%;
+	width: 74%;
+	height: 68%;
+	display: block;
+	border-radius: 100%;
+	z-index: 4;
+	background-color: #EEEDF5;
+	filter: blur(10px);
+	transform: rotate(-36deg);
+}
+
+.line {
+  width: 100%;
+  height: 40px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+	z-index: 3;
+}
+
+.screen {
+  width: 60%;
+  height: 38%;
+  background-color: #BEBAAD;
+	border: 10px solid black;
+	border-radius: 20px;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	box-shadow: inset 10px 10px 20px rgba(0,0,0,0.5);
+	z-index: 4;
+}
+
+.screen::before {
+	content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	background-repeat: no-repeat;
+	background-size: 325px 200px;
+	background-position: 18px 15px;
+	background-image: url('https://raw.githubusercontent.com/mariawarnes/codepen-assets/main/noise.jpg');
+	opacity: 0.1;
+	filter: blur(1px);
+}
+
+.screen * {
+	opacity: 1;
+	transition-duration: 0.25s;
+}
+
+.screen.off * {
+	opacity: 0 !important;
+}
+
+.screen img {
+	filter: grayscale(100%) brightness(101%) contrast(135%);
+	mix-blend-mode: multiply;
+	pointer-events: none;
+	position: absolute;
+}
+
+.main-mon {
+	width: 279px;
+	top: -46px;
+	right: -30px;
+	bottom: 0;
+}
+
+.screen img.env {
+	filter: grayscale(100%) brightness(150%) contrast(45%);
+	width: 115px;
+	bottom: 50px;
+	left: 20px;
+}
+
+.screen .line {
+	height: 4px;
+	width: 325px;
+	left: 20px;
+	top: 180px;
+	filter: blur(0.5px);
+	opacity: 0.85;
+}
+
+.screen .line::after {
+	content: '';
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	right: -1px;
+	bottom: -1px;
+	height: 4px;
+	width: 323px;
+	filter: blur(0.5px);
+}
+
+.steps {
+	font-family: 'Technicality', sans-serif;
+	font-family: 'Technicality1', sans-serif;
+	font-size: 40px;
+	position: absolute;
+	right: 12px;
+	bottom: 15px;
+	filter: blur(0.5px);
+	color: black;
+	opacity: 0.85;
+}
+
+.steps::after {
+	content: attr(data-count);
+	position: absolute;
+	right: -2px;
+	bottom: -2px;
+	color: rgba(0,0,0,0.5);
+	filter: blur(0.5px);
+}
+
+.btn-wrap {
+	display: inline-block;
+  position: absolute;
+  bottom: 22%;
+  transform: translate(-50%, 50%);
+}
+
+.btn-wrap {
+	width: 70px;
+  height: 70px;
+  background-color: #EEEDF5;
+	border: 3px solid #979797;
+	box-shadow: 8px 8px 3px rgba(0,0,0,0.2);
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 3;
+}
+
+.btns button {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: none;
+	background-color: transparent;
+}
+
+.btn-wrap::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: inset 0px 0px 20px rgba(255,255,255,1);
+	border-radius: 50%;
+}
+
+.btn-wrap:hover {
+	box-shadow: none;
+}
+
+.btn-wrap:hover::after {
+	box-shadow: inset 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+.btn-wrap:active::after {
+	box-shadow: inset 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+.btn-wrap.left {
+  left: 25%;
+}
+
+.btn-wrap:nth-child(2) {
+  left: 50%;
+	width: 90px;
+	height: 90px;
+	bottom: 17%;
+}
+
+.btn-wrap.right {
+  left: 75%;
+}
+
+.triangle {
+	position: relative;
+	background-color: #E5E0E6;
+	text-align: left;
+	top: 18px;
+}
+.triangle:before,
+.triangle:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+.triangle,
+.triangle:before,
+.triangle:after {
+	width:  24px;
+	height: 24px;
+	border-top-right-radius: 30%;
+}
+
+.left .triangle {
+	transform: rotate(-30deg) skewX(-30deg) scale(1,.866);
+	left: 28px;
+	box-shadow: 2px 2px 0 white;
+}
+.left .triangle:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+	box-shadow: -2px -2px 0 white;
+}
+.left .triangle:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+	box-shadow: 2px -2px 0 white;
+}
+
+.right .triangle {
+	transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+	left: 18px;
+}
+.right .triangle:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+		box-shadow: -2px -2px 0 white;
+}
+.right .triangle:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+		box-shadow: 2px -2px 0 white;
+}
