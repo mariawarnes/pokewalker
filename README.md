@@ -24,9 +24,10 @@ Interactive recreation of the Pokewalker by Nintendo.
 - Press and hold the middle button and watch the screen switch on.
 - Press the walk button to simulate walking to see the step counter rise.
 
-
 <p align="center">
   <a href="https://codepen.io/mariawarnes/pen/wvYRPEr">
     <img src="https://img.shields.io/badge/Live Demo-black.svg?style=for-the-badge&logo=codepen&logoColor=white" alt="Live Demo">
   </a>
 </p>
+
+![img](https://shots.codepen.io/username/pen/wvYRPEr-800.jpg?version=1684917907)
