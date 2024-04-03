@@ -30,4 +30,4 @@ Interactive recreation of the Pokewalker by Nintendo.
   </a>
 </p>
 
-![img](https://shots.codepen.io/username/pen/wvYRPEr-800.jpg?version=1684917907)
+[![img](https://shots.codepen.io/username/pen/wvYRPEr-800.jpg?version=1684917907)](https://codepen.io/mariawarnes/pen/wvYRPEr)
